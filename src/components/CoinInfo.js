@@ -7,8 +7,9 @@ import { chartDays } from '../config/data';
 import { CryptoState } from '../CryptoContext';
 import SelectButton from './SelectButton';
 import { styled } from '@mui/material/styles';
-// import Chart from 'chart.js/auto';
-// Chart.register(ChartScale, LinearScale, CategoryScale);
+import { Chart as ChartJS, registerables } from 'chart.js';
+
+ChartJS.register(...registerables);
 
 const theme = createTheme();
 
@@ -66,7 +67,7 @@ const CoinInfo = ({ coin }) => {
                     />
                 ) : (
                     <>
-                        <Line key={historicData.length}
+                        <Line
                             data={{
                                 labels: historicData.map((coin) => {
                                     let date = new Date(coin[0]);

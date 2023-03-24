@@ -16,6 +16,10 @@ const Row = styled(TableRow)`
     }
     font-family: Montserrat;
 `;
+const Text = styled(TextField)`
+    background-color: grey;
+    
+`
 
 const CoinsTable = () => {
     const [coins, setCoins] = useState([]);
@@ -65,7 +69,7 @@ const CoinsTable = () => {
                 >
                     Cryptocurrency Prices by Market Cap
                 </Typography>
-                <TextField
+                <Text
                     label="Search For a Crypto Currency.."
                     variant="outlined"
                     style={{ marginBottom: 20, width: "100%" }}
